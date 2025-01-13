@@ -11,7 +11,13 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>calculator by exquet</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="QIcon::ThemeIcon::FormatJustifyCenter"/>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(107, 107, 107);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="output_label">
@@ -19,12 +25,38 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>351</width>
+      <width>361</width>
       <height>81</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>25</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+ qproperty-alignment: 'AlignVCenter | AlignRight';
+ border-bottom: 1px solid gray;
+ background-color : white;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::NoFrame</enum>
+    </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>0</string>
+    </property>
+    <property name="margin">
+     <number>10</number>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
@@ -36,8 +68,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: rgb(81, 81, 81);
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>AC</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -49,8 +91,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: rgb(81, 81, 81);
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>+/-</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
@@ -62,8 +114,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: rgb(81, 81, 81);
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>%</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
@@ -75,8 +137,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: orange;
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>/</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_5">
@@ -88,8 +160,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: rgb(158, 158, 158);
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>7</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_6">
@@ -101,8 +183,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: rgb(158, 158, 158);
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>9</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_7">
@@ -114,8 +206,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: orange;
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>*</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_8">
@@ -127,8 +229,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: rgb(158, 158, 158);
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>8</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_9">
@@ -140,8 +252,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: orange;
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>+</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_10">
@@ -153,8 +275,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: rgb(158, 158, 158);
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>4</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_11">
@@ -166,8 +298,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: rgb(158, 158, 158);
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>6</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_12">
@@ -179,8 +321,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: orange;
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>-</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_13">
@@ -192,8 +344,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: rgb(158, 158, 158);
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>3</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_14">
@@ -205,8 +367,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: rgb(158, 158, 158);
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>5</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_15">
@@ -218,8 +390,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: rgb(158, 158, 158);
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>2</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_16">
@@ -231,8 +413,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: rgb(158, 158, 158);
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>1</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_17">
@@ -244,21 +436,18 @@
       <height>81</height>
      </rect>
     </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_18">
-    <property name="geometry">
-     <rect>
-      <x>91</x>
-      <y>437</y>
-      <width>81</width>
-      <height>81</height>
-     </rect>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: orange;
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>=</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_19">
@@ -266,12 +455,22 @@
      <rect>
       <x>0</x>
       <y>437</y>
-      <width>81</width>
+      <width>171</width>
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: rgb(158, 158, 158);
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>0</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_20">
@@ -283,8 +482,18 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid black;
+	background-color: rgb(81, 81, 81);
+}
+
+QPushButton:pressed{
+	background-color: white;
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>.</string>
     </property>
    </widget>
   </widget>
