@@ -7,20 +7,15 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    for (int i = 0; i <= 9; ++i) {
+        QString buttonName = QString("pushButton_%1").arg(i); // arg заменят значение %1
+        QPushButton *button = findChild<QPushButton *>(buttonName);
 
-
-    connect(ui->pushButton_0, SIGNAL(clicked()), this, SLOT(digit_numbers())); // conect связывает SIGNAL и SLOT
-    connect(ui->pushButton_1, SIGNAL(clicked()), this, SLOT(digit_numbers()));
-    connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(digit_numbers()));
-    connect(ui->pushButton_3, SIGNAL(clicked()), this, SLOT(digit_numbers()));
-    connect(ui->pushButton_4, SIGNAL(clicked()), this, SLOT(digit_numbers()));
-    connect(ui->pushButton_5, SIGNAL(clicked()), this, SLOT(digit_numbers()));
-    connect(ui->pushButton_6, SIGNAL(clicked()), this, SLOT(digit_numbers()));
-    connect(ui->pushButton_7, SIGNAL(clicked()), this, SLOT(digit_numbers()));
-    connect(ui->pushButton_8, SIGNAL(clicked()), this, SLOT(digit_numbers()));
-    connect(ui->pushButton_9, SIGNAL(clicked()), this, SLOT(digit_numbers()));
-
-
+        if (button != nullptr){
+            connect(button, &QPushButton::clicked, this, &MainWindow::digit_numbers);  // conect связывает SIGNAL и SLOT
+            //connect(button, SIGNAL(clicked()), this, SLOT(digit_numbers())); - old
+        }
+    }
 }
 
 MainWindow::~MainWindow()
@@ -30,12 +25,47 @@ MainWindow::~MainWindow()
 
 void MainWindow::digit_numbers()
 {
-    QPushButton *button = static_cast<QPushButton*>(sender()); //sender - Возвращает указатель на объект, который вызвал сигнал.
+    QPushButton *button = static_cast<QPushButton*>(sender()); // sender - Возвращает указатель на объект, который вызвал сигнал
 
     double allNumbers;
     QString new_label;
 
     allNumbers = (ui->output_label->text()+ button->text()).toDouble();
-    new_label = QString::number(allNumbers, 'g', 15); //number - Преобразует число обратно в строку
+    new_label = QString::number(allNumbers, 'g', 15); // number - Преобразует число обратно в строку
     ui->output_label->setText(new_label);
 }
+
+void MainWindow::on_pushButton_dot_clicked()
+{
+    if (!ui->output_label->text().contains(".")){ // contains - проверяет, содержится ли в строке определённая подстрока или символ
+        ui->output_label->setText(ui->output_label->text() + ".");
+    }
+}
+
+void MainWindow::on_pushButton_plus_minus_clicked()
+{
+    QPushButton *button = static_cast<QPushButton*>(sender());
+
+    double allNumbers = (ui->output_label->text().toDouble());
+    allNumbers *= -1;
+    QString new_label = QString::number(allNumbers, 'g', 15);
+    ui->output_label->setText(new_label);
+}
+
+
+void MainWindow::on_pushButton_percent_clicked()
+{
+    QPushButton *button = static_cast<QPushButton*>(sender());
+
+    double allNumbers = (ui->output_label->text().toDouble());
+    allNumbers *= 0.01;
+    QString new_label = QString::number(allNumbers, 'g', 15);
+    ui->output_label->setText(new_label);
+}
+
+
+void MainWindow::on_pushButton_clear_clicked()
+{
+    ui->output_label->setText("0");
+}
+
