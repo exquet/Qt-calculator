@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-double numFirst;
+double numFirst, numSecond;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -42,9 +42,14 @@ void MainWindow::digit_numbers()
     double allNumbers;
     QString new_label;
 
-    allNumbers = (ui->output_label->text()+ button->text()).toDouble();
-    new_label = QString::number(allNumbers, 'g', 15); // number - Преобразует число обратно в строку
-    ui->output_label->setText(new_label);
+    if(ui->output_label->text().contains(".") && button->text() == "0"){
+        new_label = ui->output_label->text()+ button->text();
+    }
+    else{
+        allNumbers = (ui->output_label->text()+ button->text()).toDouble();
+        new_label = QString::number(allNumbers, 'g', 15); // number - Преобразует число обратно в строку
+        ui->output_label->setText(new_label);
+    }
 }
 
 void MainWindow::on_pushButton_dot_clicked()
@@ -79,6 +84,11 @@ void MainWindow::on_pushButton_percent_clicked()
 void MainWindow::on_pushButton_clear_clicked()
 {
     ui->output_label->setText("0");
+
+    ui->pushButton_plus->setChecked(false);
+    ui->pushButton_minus->setChecked(false);
+    ui->pushButton_division->setChecked(false);
+    ui->pushButton_multiplication->setChecked(false);
 }
 
 void MainWindow::math_operations()
@@ -94,7 +104,7 @@ void MainWindow::math_operations()
 
 void MainWindow::on_pushButton_equally_clicked()
 {
-    double numSecond, labelNumber;
+    double labelNumber;
     QString newLabel;
 
     numSecond = ui->output_label->text().toDouble();
