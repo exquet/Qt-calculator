@@ -96,6 +96,9 @@ void MainWindow::math_operations()
 {
     QPushButton *button = static_cast<QPushButton*>(sender());
 
+    QString butName = button->text();
+    ui->operation_text->setText("operation: " + butName);
+
     numFirst = ui->output_label->text().toDouble();
     ui->output_label->setText("");
 
@@ -115,18 +118,24 @@ void MainWindow::on_pushButton_equally_clicked()
         QString new_label = QString::number(labelNumber, 'g', 15);
         ui->output_label->setText(new_label);
         ui->pushButton_plus->setChecked(false);
+
+        ui->operation_text->setText("operation: ");
     }
     else if (ui->pushButton_minus->isChecked()){
         labelNumber = numFirst - numSecond;
         QString new_label = QString::number(labelNumber, 'g', 15);
         ui->output_label->setText(new_label);
         ui->pushButton_minus->setChecked(false);
+
+        ui->operation_text->setText("operation: ");
     }
     else if (ui->pushButton_multiplication->isChecked()){
         labelNumber = numFirst * numSecond;
         QString new_label = QString::number(labelNumber, 'g', 15);
         ui->output_label->setText(new_label);
         ui->pushButton_multiplication->setChecked(false);
+
+        ui->operation_text->setText("operation: ");
     }
     else if (ui->pushButton_division->isChecked()){
         if (numFirst == 0){
@@ -138,6 +147,8 @@ void MainWindow::on_pushButton_equally_clicked()
             ui->output_label->setText(new_label);
             ui->pushButton_division->setChecked(false);
         }
+
+        ui->operation_text->setText("operation: ");
     }
 }
 

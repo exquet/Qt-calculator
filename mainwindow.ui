@@ -10,6 +10,18 @@
     <height>518</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>354</width>
+    <height>518</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>354</width>
+    <height>518</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>calculator by exquet</string>
   </property>
@@ -494,6 +506,25 @@ QPushButton:pressed{
     </property>
     <property name="text">
      <string>.</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="operation_text">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>0</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+background-color: white;
+font-weight: bold;
+}</string>
+    </property>
+    <property name="text">
+     <string>operation: </string>
     </property>
    </widget>
   </widget>
