@@ -38,24 +38,25 @@ MainWindow::~MainWindow()
 void MainWindow::digit_numbers()
 {
     QPushButton *button = static_cast<QPushButton*>(sender()); // sender - Возвращает указатель на объект, который вызвал сигнал
+    QString currentText = ui->output_label->text();
+    QString buttonText = button->text();
 
-    double allNumbers;
-    QString new_label;
-
-    if(ui->output_label->text().contains(".") && button->text() == "0"){
-        new_label = ui->output_label->text()+ button->text();
+    if(currentText == "0" && buttonText != "."){
+        currentText = buttonText;
     }
     else{
-        allNumbers = (ui->output_label->text()+ button->text()).toDouble();
-        new_label = QString::number(allNumbers, 'g', 15); // number - Преобразует число обратно в строку
-        ui->output_label->setText(new_label);
+        currentText += buttonText;
     }
+
+    ui->output_label->setText(currentText);
 }
 
 void MainWindow::on_pushButton_dot_clicked()
 {
-    if (!ui->output_label->text().contains(".")){ // contains - проверяет, содержится ли в строке определённая подстрока или символ
-        ui->output_label->setText(ui->output_label->text() + ".");
+    QString currentText = ui->output_label->text();
+
+    if (!currentText.contains(".")){ // contains - проверяет, содержится ли в строке определённая подстрока или символ
+        ui->output_label->setText(currentText + ".");
     }
 }
 
