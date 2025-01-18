@@ -90,19 +90,23 @@ void MainWindow::on_pushButton_clear_clicked()
     ui->pushButton_minus->setChecked(false);
     ui->pushButton_division->setChecked(false);
     ui->pushButton_multiplication->setChecked(false);
+
+    ui->operation_text->setText("operation: ");
 }
 
 void MainWindow::math_operations()
 {
     QPushButton *button = static_cast<QPushButton*>(sender());
 
-    QString butName = button->text();
-    ui->operation_text->setText("operation: " + butName);
+    if (ui->operation_text->text() == "operation: "){
+        QString butName = button->text();
+        ui->operation_text->setText("operation: " + butName);
 
-    numFirst = ui->output_label->text().toDouble();
-    ui->output_label->setText("");
+        numFirst = ui->output_label->text().toDouble();
+        ui->output_label->setText("");
 
-    button->setChecked(true);
+        button->setChecked(true);
+    }
 }
 
 
